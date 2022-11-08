@@ -32,6 +32,7 @@ build
 # System Files
 .DS_Store
 Thumbs.db
+project.json
 
 # Output of 'npm pack'
 *.tgz
