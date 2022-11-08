@@ -232,6 +232,11 @@
                 padding-top: 10px;
             }
 
+            table.mercancia th {
+                padding-bottom: 3px;
+                padding-top: 3px;
+            }
+
             table.desglose td {
                 font-size: 4pt;
                 padding-top: 0px;
@@ -1306,6 +1311,7 @@
             </tr>
         </table>
 
+
         <table style="width: 100%; margin-top: 10px; padding: 0; border: 0px; border-color: #e3e3e3;">
             <tr>
                 <th colspan="6">Detalles del comprobante</th>
@@ -1530,6 +1536,180 @@
             </#if>
         </#if>
 
+        <#if record.custbody_efx_fe_comercio_exterior==true>
+            <table style="width: 100%; margin-top: 10px; padding: 0; border: 0px; border-color: #e3e3e3;">
+                <tbody>
+                    <tr>
+                        <th colspan="10">
+                            <strong>&nbsp;Comercio Exterior</strong>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td style=" width: 25%;font-size: 7pt;" rowspan="8" colspan="2">
+
+                            <#if record.custbody_efx_fe_ce_recep_num_reg?has_content>
+                            <b>No. Registro Receptor:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_exchage?has_content>
+                            <b>Tipo de Cambio:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_totalusd?has_content>
+                            <b>Total en Dolares:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_propietario_numreg?has_content>
+                            <b>No. Registro Propietario:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_motivo_traslado?has_content>
+                            <b>Motivo de Traslado:</b><br /><br />
+                            </#if>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="align: left; width: 25%;font-size: 7pt;" rowspan="8" colspan="3">
+                            <#if record.custbody_efx_fe_ce_recep_num_reg?has_content>
+                            ${record.custbody_efx_fe_ce_recep_num_reg}<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_exchage?has_content>
+                            ${record.custbody_efx_fe_ce_exchage}<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_totalusd?has_content>
+                            ${record.custbody_efx_fe_ce_totalusd}<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_propietario_numreg?has_content>
+                            ${record.custbody_efx_fe_ce_propietario_numreg}<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_motivo_traslado?has_content>
+                            ${record.custbody_efx_fe_ce_motivo_traslado}<br /><br />
+                            </#if>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="align: center; width: 25%;font-size: 7pt;" rowspan="8" colspan="2">
+                            <#if record.custbody_efx_fe_ce_rec_residenciaf?has_content>
+                            <b>Residencia Fiscal Receptor:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_incoterm?has_content>
+                            <b>Clave Incoterm:</b><br /><br />
+                            </#if>
+
+                            <#if record.custbody_efx_fe_ce_clavepedimento?has_content>
+                            <b>Clave de Pedimento:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_p_residenciafiscal?has_content>
+                            <b>Residencia Fiscal Propietario:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_certificado_origen?has_content>
+                            <b>Certificado Origen:</b><br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_certificado_origen?number == 0>
+                            <#else>
+                            <b>No. Certificado Origen:</b><br /><br />
+                            </#if>
+                            <b>Tipo de operación:</b><br /><br />
+                            <#if record.custbody_efx_fe_ce_subdivision?has_content>
+                            <b>Subdivision:</b><br /><br />
+                            </#if>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="align: left; width: 25%;font-size: 7pt;" rowspan="8" colspan="3">
+                            <#if record.custbody_efx_fe_ce_rec_residenciaf?has_content>
+                            ${record.custbody_efx_fe_ce_rec_residenciaf}<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_incoterm?has_content>
+                            ${record.custbody_efx_fe_ce_incoterm}<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_clavepedimento?has_content>
+                            ${record.custbody_efx_fe_ce_clavepedimento} Importación o Exportación Definitiva<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_p_residenciafiscal?has_content>
+                            ${record.custbody_efx_fe_ce_p_residenciafiscal}<br /><br />
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_certificado_origen?has_content>
+                            <#if record.custbody_efx_fe_ce_certificado_origen?number == 0>
+                                ${record.custbody_efx_fe_ce_certificado_origen} No Funge como certificado de origen.<br /><br />
+                            <#else>
+                                ${record.custbody_efx_fe_ce_certificado_origen} Funge como certificado de origen.<br /><br />
+                            </#if>
+                            </#if>
+                            <#if record.custbody_efx_fe_ce_certificado_origen?number == 0>
+                            <#else>
+                            ${record.custbody_efx_fe_ce_ncertificado_origen}<br /><br />
+                            </#if>
+                            2 Exportación<br /><br />
+                            <#if record.custbody_efx_fe_ce_subdivision?has_content>
+                            ${record.custbody_efx_fe_ce_subdivision} No Tiene SubDivisión<br /><br />
+                            </#if>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="mercancia" style="width: 100%; margin-top: 2px; border: 1px; border-color: #e3e3e3;">
+                <tr>
+                    <th colspan="9">
+                        <strong>Mercancias</strong>
+                    </th>
+                </tr>
+                <#list record.item as item>
+                    <tr colspan ="9">
+                        <#if item.custcol_efx_fe_upc_code?has_content>
+                            <th colspan="1" align="center" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">No.<br/>Identificación</th>
+                        </#if>
+
+                        <#if item.custcol_efx_fe_ce_farancel_code?has_content>
+                            <th colspan="1" align="center" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Fracc. Arancelaria</th>
+                        </#if>
+
+                        <#if item.description?has_content>
+                            <th colspan="4" align="center" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Descripción</th>
+                        </#if>
+
+                        <#if item.custcol_efx_fe_ce_cant_aduana?has_content>
+                            <th colspan="1" align="center" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Cantidad</th>
+                        </#if>
+
+                        <#if item.custcol_efx_fe_unit_code_ce?has_content>
+                            <th colspan="1" align="center" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Unidad aduana</th>
+                        </#if>
+
+                        <#if item.amount?has_content>
+                            <th colspan="1" align="center" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Valor unitario</th>
+                        </#if>
+                    </tr>
+
+                    <tr>
+                        <#if item.custcol_efx_fe_upc_code?has_content>
+                            <td colspan ="1" align="center" line-height="100%" style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt;">${item.custcol_efx_fe_upc_code}</td>
+                        </#if>
+
+                        <#if item.custcol_efx_fe_ce_farancel_code?has_content>
+                            <td colspan ="1" align="center" line-height="100%" style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt;">${item.custcol_efx_fe_ce_farancel_code}</td>
+                        </#if>
+
+                        <#if item.description?has_content>
+                            <td colspan ="4" line-height="100%" style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt;">${item.description}</td>
+                        </#if>
+
+                        <#if item.custcol_efx_fe_ce_cant_aduana?has_content>
+                            <td colspan ="1" align="center" line-height="100%" style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt;">${item.custcol_efx_fe_ce_cant_aduana}</td>
+                        </#if>
+
+                        <#if item.custcol_efx_fe_unit_code_ce?has_content>
+                            <td colspan ="1" align="center" line-height="100%" style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt;">${item.custcol_efx_fe_unit_code_ce}</td>
+                        </#if>
+
+                        <#if item.amount?has_content>
+                            <td colspan ="1" align="center" line-height="100%" style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt;">${item.amount}</td>
+                        </#if>
+                    </tr>
+                </#list>
+
+            </table>
+        </#if>
 
         <#if certData?has_content>
             <table class="tablascompletas" style="margin-top:5px;">
