@@ -1,0 +1,9 @@
+<advancedpdftemplate scriptid="custtmpl_efx_fe_item_ff" standard="STDTMPLEMPTY">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>F</preferred>
+  <printtype>PACKINGSLIP</printtype>
+  <title>EFX FE - Item Fulfillment Template</title>
+  <trantype>CUSTINVC</trantype>
+</advancedpdftemplate>
